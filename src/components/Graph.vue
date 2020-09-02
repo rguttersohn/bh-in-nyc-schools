@@ -9,7 +9,7 @@ import * as d3 from "d3";
 
 export default {
   props: {
-    activeSchool: Array,
+    activeData: Array,
   },
   data() {
     return {
@@ -24,13 +24,13 @@ export default {
       return d3
         .scaleLinear()
         .range([0, this.height])
-        .domain([d3.max(this.activeSchool[0].data,d=>d.stat), 0]);
+        .domain([d3.max(this.activeData[0],d=>d.stat), 0]);
     },
     xScale() {
       return d3
         .scaleBand()
         .range([0, this.width])
-        .domain(this.activeSchool[0].data.map(d=>d.category))
+        .domain(this.activeData[0].map(d=>d.category))
         .padding(0.5);
     }
   },
@@ -71,7 +71,7 @@ export default {
           .append("g")
           .attr("class", "bars")
           .selectAll("rect")
-          .data(this.activeSchool[0].data)
+          .data(this.activeData[0])
           .enter()
           .append("rect")
           .attr("width", this.xScale.bandwidth())
@@ -94,7 +94,7 @@ export default {
           .attr("transform", `translate(0,${this.margin.bottom - 20})`)
           .attr("class", "bar-chart-labels")
           .selectAll("text")
-          .data(this.activeSchool[0].data)
+          .data(this.activeData[0])
           .enter()
           .append("text")
           .text(d => d.stat + "%")
@@ -106,8 +106,8 @@ export default {
     }
   },
   watch: {
-    activeSchool() {
-      this.drawChart();
+    activeData() {
+      this.drawChart()
     }
   }
 };

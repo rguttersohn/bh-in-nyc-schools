@@ -12,7 +12,7 @@ export default {
   name: "App",
   components: {
     Button,
-    School,
+    School
   },
   data() {
     return {
@@ -20,58 +20,33 @@ export default {
         {
           id: 1,
           school: `Fannie Lou Hamer Freedom HS `,
-          map: "./fannie-lou.png",
-          info: `<p>This is school one's info</p>
-        <p>School one had some issues, but it's all better now</p>`,
-          data: [
-            { category: "category 1", stat: 10 },
-            { category: "category 2", stat: 30 },
-            { category: "category 3", stat: 50 }
+          map: "src/assets/fannie-lou.png",
+          info: `<p>This school is in Morrisania (CD B03) in the Bronx. Say something about Risk Ranking and this CD  being among the highest risk communities.</p>`,
+          "Children Under 18": [
+            { category: "Morrisiana", stat: "23,338"},
+            { category: "Bronx", stat: "355,049"},
+            { category: "NYC", stat: "1,739,256"}
           ],
-          dataTwo: [
-            { category: "cat 1", stat: 30 },
-            { category: "cat 2", stat: 70 },
-            { category: "cat 3", stat: 120 },
-            { category: "cat 4", stat: 160 },
-            { category: "cat 5", stat: 20 }
+          "Child Poverty": [
+            { category: "Morrisiana", stat: 50.7 },
+            { category: "Bronx", stat: 38.1 },
+            { category: "NYC", stat: 23.8 }
           ]
         },
         {
           id: 2,
           school: "HS for Youth and Community Development ",
-          map: "./youthcommunity.png",
-          info: `<p>This is school Two's info</p>
-        <p>School two was doing great, but now things are lousy</p>`,
-          data: [
-            { category: "cat 1", stat: 50 },
-            { category: "cat 2", stat: 10 },
-            { category: "cat 3", stat: 30 }
+          map: "src/assets/youthcommunity.png",
+          info: `<p>This school is in Flatbush/Midwood (CD K14) in Brooklyn. Say something about Risk Ranking and this CD being among moderate risk communities, but moderate-high in health domain.</p>`,
+          "Children Under 18": [
+            { category: "Flatbush/Midwood", stat: "34,701" },
+            { category: "Brooklyn", stat: "588,823" },
+            { category: "NYC", stat: "1,739,256" }
           ],
-           dataTwo: [
-            { category: "cat 1", stat: 90 },
-            { category: "cat 2", stat: 30 },
-            { category: "cat 3", stat: 80 },
-            { category: "cat 4", stat: 60 },
-            { category: "cat 5", stat: 70 }
-          ]
-        },
-        {
-          id: 3,
-          school: "Long Island City HS",
-          map: "https://www.cccnewyork.org/wp-content/uploads/2020/08/Screen-Shot-2020-08-27-at-3.51.20-PM.png",
-          info: `<p>This is school three's info</p>
-        <p>School three was doing great, but now things are mediocre thanks to the courage of its janitorial staff.</p>`,
-          data: [
-            { category: "category 1", stat: 5 },
-            { category: "category 2", stat: 20 },
-            { category: "category 3", stat: 50 }
-          ],
-           dataTwo: [
-            { category: "cat 1", stat: 30 },
-            { category: "cat 2", stat: 60 },
-            { category: "cat 3", stat: 120 },
-            { category: "cat 4", stat: 40 },
-            { category: "cat 5", stat: 210 }
+          "Child Poverty": [
+            { category: "Flatbush/Midwood", stat: 16.2 },
+            { category: "Brooklyn", stat: 26 },
+            { category: "NYC", stat: 23.8 }
           ]
         }
       ],
