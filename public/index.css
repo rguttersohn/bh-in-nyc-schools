@@ -347,6 +347,16 @@
     text-transform: uppercase;
   }
   
+  .stats-container{
+    display:flex;
+    justify-content:center
+  }
+
+  .bar-graph-flex-container{
+    display:flex;
+    justify-content: space-evenly;
+  }
+  
   @media screen and (max-width: 800px) {
     .step-container p {
       font-size: 22px;
