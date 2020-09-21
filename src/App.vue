@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <Button @button-clicked="createActiveSchool" :schools="schools" />
-    <School :activeSchool="activeSchool" />
+    <Community :activeSchool="activeSchool" />
+    <School :activeSchool="activeSchool"/>
   </div>
 </template>
 
 <script>
 import Button from "@/components/Button.vue";
+import Community from "@/components/Community.vue";
 import School from "@/components/School.vue";
 export default {
   name: "App",
   components: {
     Button,
+    Community,
     School
   },
   data() {
@@ -20,7 +23,8 @@ export default {
         {
           id: 1,
           school: `Fannie Lou Hamer Freedom HS `,
-          map: "src/assets/fannie-lou.png",
+          map:
+            "https://www.cccnewyork.org/wp-content/uploads/2020/09/Screen-Shot-2020-09-02-at-6.40.37-PM.png",
           info: `<p>This school is in Morrisania (CD B03) in the Bronx. Say something about Risk Ranking and this CD  being among the highest risk communities.</p>`,
           under18: [
             { header: "Children Under 18" },
@@ -38,7 +42,7 @@ export default {
           ],
           unemployment: [
             { header: "Unemployment Rate" },
-            { id: "unemployment-rate" },
+            { id: "unemployment" },
             { category: "Morrisiana", stat: 13.3 },
             { category: "Bronx", stat: 10.1 },
             { category: "NYC", stat: 5.7 }
@@ -70,12 +74,34 @@ export default {
             { category: "Morrisiana", stat: 12.3 },
             { category: "Bronx", stat: 14.1 },
             { category: "NYC", stat: 10.6 }
+          ],
+          studentsTempHousing: [
+            { header: "Students Living in Temporary Housing (SY 2019)" },
+            { id: "students-temp-housing" },
+            { category: "School District 12", stat: 20.1 },
+            { category: "Bronx", stat: 18.5 },
+            { category: "NYC", stat: 10.2 }
+          ],
+          studentsDisabilities: [
+            { header: "Students with Disabilities (IEP) (SY 2020)" },
+            { id: "students-disabilities" },
+            { category: "School District 12", stat: 22.7 },
+            { category: "Bronx", stat: 23 },
+            { category: "NYC", stat: 20.4 }
+          ],
+          studentEcoStatus: [
+            { header: "Student Economic Status (SY 2020)" },
+            { id: "student-economic-status" },
+            { category: "School District 12", stat: 91.4 },
+            { category: "Bronx", stat: 85.1 },
+            { category: "NYC", stat: 72.6 }
           ]
         },
         {
           id: 2,
           school: "HS for Youth and Community Development ",
-          map: "src/assets/youthcommunity.png",
+          map:
+            "https://www.cccnewyork.org/wp-content/uploads/2020/09/Screen-Shot-2020-09-02-at-6.40.48-PM.png",
           info: `<p>This school is in Flatbush/Midwood (CD K14) in Brooklyn. Say something about Risk Ranking and this CD being among moderate risk communities, but moderate-high in health domain.</p>`,
           under18: [
             { header: "Children Under 18" },
@@ -125,6 +151,27 @@ export default {
             { category: "Flatbush/Midwood", stat: 13.4 },
             { category: "Brooklyn", stat: 10.5 },
             { category: "NYC", stat: 10.6 }
+          ],
+          studentsTempHousing: [
+            { header: "Students Living in Temporary Housing (SY 2019)" },
+            { id: "students-temp-housing" },
+            { category: "School District X", stat: 10.1 },
+            { category: "Bronx", stat: 18.5 },
+            { category: "NYC", stat: 10.2 }
+          ],
+          studentsDisabilities: [
+            { header: "Students with Disabilities (IEP) (SY 2020)" },
+            { id: "students-disabilities" },
+            { category: "School District X", stat: 12.7 },
+            { category: "x", stat: 23 },
+            { category: "NYC", stat: 20.4 }
+          ],
+          studentEcoStatus: [
+            { header: "Student Economic Status (SY 2020)" },
+            { id: "student-economic-status" },
+            { category: "School District x", stat: 31.4 },
+            { category: "x", stat: 85.1 },
+            { category: "NYC", stat: 72.6 }
           ]
         }
       ],

@@ -1,6 +1,6 @@
 <template>
-  <div v-if="activeData[0] !== undefined" class="bar-chart-wrapper" :id="graphId">
-    <h3>{{activeData[0][0].header}}</h3>
+  <div class="bar-chart-wrapper" :id="graphId">
+    <h3 v-if="activeData[0]!==undefined">{{activeData[0][0].header}}</h3>
     <svg />
   </div>
 </template>
@@ -10,7 +10,8 @@ import * as d3 from "d3";
 
 export default {
   props: {
-    activeData: Array
+    activeData: Array,
+    graphId: String
   },
   data() {
     return {
@@ -18,7 +19,7 @@ export default {
       height: 175,
       colors: ["#0099cd", "#de425b", "red"],
       margin: { left: 20, bottom: 50 },
-      filteredData: ""
+      filteredData: []
     };
   },
   computed: {
@@ -32,17 +33,17 @@ export default {
       return d3
         .scaleBand()
         .range([0, this.width])
-        .domain(this.filteredData.map(d => d.category))
+        .domain(this.filteredData[0].map(d => d.category))
         .padding(0.1);
-    },
-    graphId() {
-      return this.activeData[0][1].id ? this.activeData[0][1].id : "";
     }
   },
   methods: {
     filterData() {
-      this.filteredData = this.activeData[0].filter(
-        el => el.header === undefined && el.id === undefined
+      this.filteredData.pop();
+      this.filteredData.push(
+        this.activeData[0].filter(
+          el => el.header === undefined && el.id === undefined
+        )
       );
     },
     drawChart() {
@@ -69,7 +70,7 @@ export default {
         .append("g")
         .attr("class", "bars")
         .selectAll("rect")
-        .data(this.filteredData)
+        .data(this.filteredData[0])
         .enter()
         .append("rect")
         .attr("width", this.xScale.bandwidth())
@@ -98,7 +99,7 @@ export default {
         )
         .attr("class", "bar-chart-labels")
         .selectAll("text")
-        .data(this.filteredData)
+        .data(this.filteredData[0])
         .enter()
         .append("text")
         .text(d => d.stat + "%")
@@ -112,9 +113,9 @@ export default {
   },
   watch: {
     activeData() {
-        this.filterData();
-        this.drawChart();
-        this.createChartLabels();
+      this.filterData();
+      this.drawChart();
+      this.createChartLabels();
     }
   }
 };

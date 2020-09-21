@@ -3,16 +3,16 @@
     <h3>{{activeStat[0][0].header}}</h3>
     <div class="stats-container">
       <div>
-        <p>{{activeStat[0][1].category}}</p>
-        <p>{{activeStat[0][1].stat}}</p>
-      </div>
-      <div>
         <p>{{activeStat[0][2].category}}</p>
         <p>{{activeStat[0][2].stat}}</p>
       </div>
       <div>
         <p>{{activeStat[0][3].category}}</p>
         <p>{{activeStat[0][3].stat}}</p>
+      </div>
+      <div>
+        <p>{{activeStat[0][4].category}}</p>
+        <p>{{activeStat[0][4].stat}}</p>
       </div>
     </div>
   </div>

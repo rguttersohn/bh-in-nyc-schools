@@ -1,38 +1,17 @@
 <template>
   <div>
-    <div>
-      <img
-        v-if="this.activeSchool[0] !== undefined"
-        class="school-map-image"
-        :src="activeSchool[0].map"
-      />
-      <h2
-        v-if="this.activeSchool[0] !== undefined"
-        class="school-subheader"
-      >{{activeSchool[0].school}}</h2>
-      <p v-if="this.activeSchool[0] !== undefined" v-html="activeSchool[0].info"></p>
-    </div>
-    <div class="dashboard">
-      <Stats :activeStat="popUnder18" />
-      <div class="bar-graph-flex-container">
-        <Graph :activeData="childPoverty" />
-        <Graph :activeData="unemployment" />
-      </div>
-      <Stats :activeStat="investigations" />
-      <div class="bar-graph-flex-container">
-        <Graph :activeData="rentBurden" />
-        <Graph :activeData="overcrowded" />
-      </div>
-    </div>
+    <h2>School District Data</h2>
+    <div class="dashboard"></div>
+    <Graph :activeData="ecoStatus" :graphId="'student-economic-status'" />
+    <Graph :activeData="studentDis" :graphId="'students-disabilities'" />
+    <Graph :activeData="tempHousing" :graphId="'students-temp-housing'" />
   </div>
 </template>
 
 <script>
 import Graph from "@/components/Graph.vue";
-import Stats from "@/components/Stats.vue";
 export default {
   components: {
-    Stats,
     Graph
   },
   props: {
@@ -40,54 +19,35 @@ export default {
   },
   data() {
     return {
-      popUnder18: [],
-      childPoverty: [],
-      unemployment: [],
-      investigations: [],
-      rentBurden: [],
-      overcrowded:[]
+      ecoStatus: [],
+      studentDis:[],
+      tempHousing:[],
+      
     };
   },
   methods: {
-    pushToPop() {
-      this.popUnder18 = [];
-      this.popUnder18.push(this.activeSchool[0].under18);
+    pushToEcoStatus() {
+      this.ecoStatus = [];
+      this.ecoStatus.push(this.activeSchool[0].studentEcoStatus);
     },
-    pushToPoverty() {
-      this.childPoverty = [];
-      this.childPoverty.push(this.activeSchool[0].childPoverty);
+    pushToStudentDis(){
+      this.studentDis.pop();
+      this.studentDis.push(this.activeSchool[0].studentsDisabilities)
     },
-    pushToUnemployment() {
-      this.unemployment = [];
-      this.unemployment.push(this.activeSchool[0].unemployment);
-    },
-    pushToInvestigations() {
-      this.investigations = [];
-      this.investigations.push(this.activeSchool[0].investigations);
-    },
-    pushToRentBurden() {
-      this.rentBurden = [];
-        this.rentBurden.push(this.activeSchool[0].rentBurden);
-    },
-    pushToOvercrowding() {
-      this.overcrowded = [];
-        this.overcrowded.push(this.activeSchool[0].overCrowdedHousing);
+    pushToTempHousing(){
+      this.tempHousing.pop()
+      this.tempHousing.push(this.activeSchool[0].studentsTempHousing)
     }
   },
   watch: {
     activeSchool() {
-      if (this.activeSchool[0] !== undefined) {
-        this.pushToPop();
-        this.pushToPoverty();
-        this.pushToUnemployment();
-        this.pushToInvestigations();
-        this.pushToRentBurden();
-        this.pushToOvercrowding()
-      }
+      this.pushToEcoStatus();
+      this.pushToStudentDis();
+      this.pushToTempHousing();
     }
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>
