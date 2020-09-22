@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div v-if="this.activeSchool[0] !== undefined">
-      <img class="school-map-image" :src="activeSchool[0].map" />
+    <div v-if="activeSchool[0] !== undefined">
+      <CommunityMapBrooklyn v-if="activeSchool[0].id === 2"/>
+      <CommunityMapBronx v-if="activeSchool[0].id === 1" />
       <h2 class="school-subheader">{{activeSchool[0].school}}</h2>
       <p v-html="activeSchool[0].info"></p>
     </div>
@@ -9,13 +10,13 @@
     <div class="dashboard">
       <Stats :activeStat="popUnder18" />
       <div class="bar-graph-flex-container">
-        <Graph :activeData="childPoverty" :graphId="'child-poverty'"/>
-        <Graph :activeData="unemployment" :graphId="'unemployment'"/>
+        <Graph :activeData="childPoverty" :graphId="'child-poverty'" />
+        <Graph :activeData="unemployment" :graphId="'unemployment'" />
       </div>
       <Stats :activeStat="investigations" />
       <div class="bar-graph-flex-container">
-        <Graph :activeData="rentBurden" :graphId="'rent-burden'"/>
-        <Graph :activeData="overcrowded" :graphId="'over-crowded-housing'"/>
+        <Graph :activeData="rentBurden" :graphId="'rent-burden'" />
+        <Graph :activeData="overcrowded" :graphId="'over-crowded-housing'" />
       </div>
     </div>
   </div>
@@ -24,10 +25,14 @@
 <script>
 import Graph from "@/components/Graph.vue";
 import Stats from "@/components/Stats.vue";
+import CommunityMapBrooklyn from "@/components/CommunityMapBrooklyn.vue";
+import CommunityMapBronx from '@/components/CommunityMapBronx.vue';
 export default {
   components: {
     Stats,
-    Graph
+    Graph,
+    CommunityMapBrooklyn,
+    CommunityMapBronx
   },
   props: {
     activeSchool: Array
@@ -80,6 +85,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-</style>

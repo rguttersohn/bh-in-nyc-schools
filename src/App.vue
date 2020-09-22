@@ -23,8 +23,6 @@ export default {
         {
           id: 1,
           school: `Fannie Lou Hamer Freedom HS `,
-          map:
-            "https://www.cccnewyork.org/wp-content/uploads/2020/09/Screen-Shot-2020-09-02-at-6.40.37-PM.png",
           info: `<p>This school is in Morrisania (CD B03) in the Bronx. Say something about Risk Ranking and this CD  being among the highest risk communities.</p>`,
           under18: [
             { header: "Children Under 18" },
@@ -99,28 +97,26 @@ export default {
         },
         {
           id: 2,
-          school: "HS for Youth and Community Development ",
-          map:
-            "https://www.cccnewyork.org/wp-content/uploads/2020/09/Screen-Shot-2020-09-02-at-6.40.48-PM.png",
-          info: `<p>This school is in Flatbush/Midwood (CD K14) in Brooklyn. Say something about Risk Ranking and this CD being among moderate risk communities, but moderate-high in health domain.</p>`,
+          school: "William E. Grady CTE High School",
+          info: `<p>This school is in Brooklyn. Say something about Risk Ranking and this CD being among moderate risk communities, but moderate-high in health domain.</p>`,
           under18: [
             { header: "Children Under 18" },
             { id: "under-18" },
-            { category: "Coney Island", stat: "34,701" },
+            { category: "CD K13", stat: "34,701" },
             { category: "Brooklyn", stat: "588,823" },
             { category: "NYC", stat: "1,739,256" }
           ],
           childPoverty: [
             { header: "Child Poverty" },
             { id: "child-poverty" },
-            { category: "Coney Island", stat: 16.2 },
+            { category: "CD K13", stat: 37.6 },
             { category: "Brooklyn", stat: 26 },
             { category: "NYC", stat: 23.8 }
           ],
           unemployment: [
-            { header: "Unemployment Rate" },
+            { header: "Unemployment Rate, July 2018" },
             { id: "unemployment" },
-            { category: "Coney Island", stat: 4.8 },
+            { category: "CD K13", stat: 5.5 },
             { category: "Brooklyn", stat: 4.9 },
             { category: "NYC", stat: 5.7 }
           ],
@@ -130,7 +126,7 @@ export default {
                 "Total Number of Children in Investigations (rate per 1,000 children)"
             },
             { id: "investigations" },
-            { category: "Coney Island", stat: 34.8 },
+            { category: "CD K13", stat: 34.8 },
             { category: "Brooklyn", stat: 40.6 },
             { category: "NYC", stat: 51.9 }
           ],
