@@ -106,21 +106,21 @@ export default {
           under18: [
             { header: "Children Under 18" },
             { id: "under-18" },
-            { category: "Flatbush/Midwood", stat: "34,701" },
+            { category: "Coney Island", stat: "34,701" },
             { category: "Brooklyn", stat: "588,823" },
             { category: "NYC", stat: "1,739,256" }
           ],
           childPoverty: [
             { header: "Child Poverty" },
             { id: "child-poverty" },
-            { category: "Flatbush/Midwood", stat: 16.2 },
+            { category: "Coney Island", stat: 16.2 },
             { category: "Brooklyn", stat: 26 },
             { category: "NYC", stat: 23.8 }
           ],
           unemployment: [
             { header: "Unemployment Rate" },
             { id: "unemployment" },
-            { category: "Flatbush/Midwood", stat: 4.8 },
+            { category: "Coney Island", stat: 4.8 },
             { category: "Brooklyn", stat: 4.9 },
             { category: "NYC", stat: 5.7 }
           ],
@@ -130,7 +130,7 @@ export default {
                 "Total Number of Children in Investigations (rate per 1,000 children)"
             },
             { id: "investigations" },
-            { category: "Flatbush/Midwood", stat: 34.8 },
+            { category: "Coney Island", stat: 34.8 },
             { category: "Brooklyn", stat: 40.6 },
             { category: "NYC", stat: 51.9 }
           ],
@@ -139,7 +139,7 @@ export default {
               header: "Severe Rent Burden"
             },
             { id: "rent-burden" },
-            { category: "Flatbush/Midwood", stat: 27.9 },
+            { category: "Coney Island", stat: 27.9 },
             { category: "Brooklyn", stat: 27.3 },
             { category: "NYC", stat: 26.7 }
           ],

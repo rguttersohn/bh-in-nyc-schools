@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      width: 300,
+      width: 200,
       height: 175,
       colors: ["#0099cd", "#de425b", "red"],
       margin: { left: 20, bottom: 50 },
@@ -46,6 +46,43 @@ export default {
         )
       );
     },
+    wrap: function(text, width) {
+      text.each(function() {
+        var text = d3.select(this),
+          words = text
+            .text()
+            .split(/\s+/)
+            .reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1, // ems
+          y = text.attr("y"),
+          dy = parseFloat(text.attr("dy")),
+          tspan = text
+            .text(null)
+            .append("tspan")
+            .attr("x", 0)
+            .attr("y", y)
+            .attr("dy", dy + "em");
+        while ((word = words.pop())) {
+          line.push(word);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > width) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [word];
+            tspan = text
+              .append("tspan")
+              .attr("x", 0)
+              .attr("y", y)
+              .attr("dy", ++lineNumber * lineHeight + dy + "em")
+              .text(word);
+          }
+        }
+      });
+    },
+
     drawChart() {
       d3.select(`#${this.graphId} svg`)
         .attr("width", this.width)
@@ -60,11 +97,10 @@ export default {
         .call(d3.axisBottom(this.xScale).tickSize([0]))
         .attr(
           "transform",
-          `translate(${this.margin.left},${this.height +
-            this.margin.bottom -
-            20})`
+          `translate(0,${this.height + this.margin.bottom - 20})`
         );
       d3.selectAll(".x-axis .domain").style("visibility", "hidden");
+      d3.selectAll(".tick text").call(this.wrap, this.xScale.bandwidth());
 
       d3.select(`#${this.graphId} svg`)
         .append("g")
@@ -75,12 +111,9 @@ export default {
         .append("rect")
         .attr("width", this.xScale.bandwidth())
         .attr("x", d => this.xScale(d.category))
-        .attr(
-          "transform",
-          `translate(${this.margin.left},${this.margin.bottom - 20})`
-        )
+        .attr("transform", `translate(0,${this.margin.bottom - 20})`)
         .attr("fill", (d, i) => this.colors[i])
-        .attr("height", this.height - this.yScale(0)) // always equal to 0
+        .attr("height", this.height - this.yScale(0))
         .attr("y", this.yScale(0))
         .transition()
         .duration(1000)
@@ -93,10 +126,7 @@ export default {
     createChartLabels() {
       d3.select(`#${this.graphId} svg`)
         .append("g")
-        .attr(
-          "transform",
-          `translate(${this.margin.left},${this.margin.bottom - 20})`
-        )
+        .attr("transform", `translate(0,${this.margin.bottom - 20})`)
         .attr("class", "bar-chart-labels")
         .selectAll("text")
         .data(this.filteredData[0])
@@ -108,7 +138,7 @@ export default {
         .attr("y", d => this.yScale(d.stat))
         .attr("dy", "1.3em")
         .attr("fill", "white")
-        .style("font-size", "18px");
+        .style("font-size", "14px");
     }
   },
   watch: {
