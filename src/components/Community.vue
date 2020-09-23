@@ -9,7 +9,7 @@
     </div>
     <h2>Community District Data</h2>
     <div class="dashboard">
-      <Stats :activeStat="popUnder18" />
+      <HorizontalBars />
       <div class="bar-graph-flex-container">
         <Graph :activeData="childPoverty" :graphId="'child-poverty'" />
         <Graph :activeData="unemployment" :graphId="'unemployment'" />
@@ -28,12 +28,14 @@ import Graph from "@/components/Graph.vue";
 import Stats from "@/components/Stats.vue";
 import CommunityMapBrooklyn from "@/components/CommunityMapBrooklyn.vue";
 import CommunityMapBronx from '@/components/CommunityMapBronx.vue';
+import HorizontalBars from '@/components HorizontalBars.vue';
 export default {
   components: {
     Stats,
     Graph,
     CommunityMapBrooklyn,
-    CommunityMapBronx
+    CommunityMapBronx,
+    HorizontalBars
   },
   props: {
     activeSchool: Array
