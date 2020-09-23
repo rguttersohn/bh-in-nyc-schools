@@ -17,7 +17,7 @@ export default {
     return {
       width: 200,
       height: 175,
-      colors: ["#0099cd", "#de425b", "red"],
+      colors: ["#0099cd", "#de425b", "#019966"],
       margin: { left: 20, bottom: 50 },
       filteredData: []
     };

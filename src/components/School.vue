@@ -1,10 +1,13 @@
 <template>
   <div>
     <h2>School District Data</h2>
-    <div class="dashboard"></div>
-    <Graph :activeData="ecoStatus" :graphId="'student-economic-status'" />
-    <Graph :activeData="studentDis" :graphId="'students-disabilities'" />
-    <Graph :activeData="tempHousing" :graphId="'students-temp-housing'" />
+    <div class="dashboard">
+      <div class="bar-graph-flex-container">
+        <Graph :activeData="ecoStatus" :graphId="'student-economic-status'" />
+        <Graph :activeData="studentDis" :graphId="'students-disabilities'" />
+      </div>
+      <Graph :activeData="tempHousing" :graphId="'students-temp-housing'" />
+    </div>
   </div>
 </template>
 
@@ -20,9 +23,8 @@ export default {
   data() {
     return {
       ecoStatus: [],
-      studentDis:[],
-      tempHousing:[],
-      
+      studentDis: [],
+      tempHousing: []
     };
   },
   methods: {
@@ -30,13 +32,13 @@ export default {
       this.ecoStatus = [];
       this.ecoStatus.push(this.activeSchool[0].studentEcoStatus);
     },
-    pushToStudentDis(){
+    pushToStudentDis() {
       this.studentDis.pop();
-      this.studentDis.push(this.activeSchool[0].studentsDisabilities)
+      this.studentDis.push(this.activeSchool[0].studentsDisabilities);
     },
-    pushToTempHousing(){
-      this.tempHousing.pop()
-      this.tempHousing.push(this.activeSchool[0].studentsTempHousing)
+    pushToTempHousing() {
+      this.tempHousing.pop();
+      this.tempHousing.push(this.activeSchool[0].studentsTempHousing);
     }
   },
   watch: {

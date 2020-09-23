@@ -4,6 +4,7 @@
       <CommunityMapBrooklyn v-if="activeSchool[0].id === 2"/>
       <CommunityMapBronx v-if="activeSchool[0].id === 1" />
       <h2 class="school-subheader">{{activeSchool[0].school}}</h2>
+      <p class="table-note">Located in Community District {{activeSchool[0].communityDistrict}} and {{activeSchool[0].schoolDistrict}} in {{activeSchool[0].borough}}.</p>
       <p v-html="activeSchool[0].info"></p>
     </div>
     <h2>Community District Data</h2>
