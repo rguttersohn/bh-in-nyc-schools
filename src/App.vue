@@ -3,6 +3,7 @@
     <Button @button-clicked="createActiveSchool" :schools="schools" />
     <Community :activeSchool="activeSchool" />
     <School :activeSchool="activeSchool" />
+    <CovidMap />
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import Button from "@/components/Button.vue";
 import Community from "@/components/Community.vue";
 import School from "@/components/School.vue";
+import CovidMap from '@/components/CovidMap.vue';
 export default {
   name: "App",
   components: {
     Button,
     Community,
-    School
+    School,
+    CovidMap
   },
   data() {
     return {
@@ -234,7 +237,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
 
 .graph-dashboard {
