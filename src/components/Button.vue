@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="button-container">
     <button
       @click="handleButtonClick"
       class="school-button"
       v-for="school in schools"
       :key="school.id"
       :data-school="school.school"
-    >{{school.school}}</button>
+    >
+      {{ school.shortName }}
+    </button>
   </div>
 </template>
 
@@ -23,10 +25,17 @@ export default {
       }
       this.$emit("button-clicked", event.target);
       event.target.classList.add("school-button-active");
+    },
+    setInitialButton() {
+      let active = document.querySelector(".school-button");
+      active.classList.add("school-button-active");
     }
+  },
+  mounted() {
+    this.setInitialButton();
   }
 };
 </script>
 
-<style scoped>
+<style>
 </style>

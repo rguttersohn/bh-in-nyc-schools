@@ -2,20 +2,34 @@
   <div>
     <h2>School District Data</h2>
     <div class="dashboard">
-      <div class="bar-graph-flex-container">
-        <Graph :activeData="ecoStatus" :graphId="'student-economic-status'" />
-        <Graph :activeData="studentDis" :graphId="'students-disabilities'" />
+        <div class="header-flex-container">
+        <p>Indicator</p>
+        <p>{{activeSchool[0].shortName}}</p>
+        <p>{{activeSchool[0].studentEcoStatus[3].category}}</p>
+        <p>NYC</p>
       </div>
-      <Graph :activeData="tempHousing" :graphId="'students-temp-housing'" />
+      <HorizontalBars
+        :activeData="ecoStatus"
+        :graphId="'student-economic-status'"
+      />
+      <HorizontalBars
+        :activeData="studentDis"
+        :graphId="'students-disabilities'"
+      />
+      <HorizontalBars
+        :activeData="tempHousing"
+        :graphId="'students-temp-housing'"
+      />
+      <HorizontalBars :activeData="suspensions" :graphId="'suspensions'"/>
     </div>
   </div>
 </template>
 
 <script>
-import Graph from "@/components/Graph.vue";
+import HorizontalBars from "@/components/HorizontalBars.vue";
 export default {
   components: {
-    Graph
+    HorizontalBars
   },
   props: {
     activeSchool: Array
@@ -24,7 +38,8 @@ export default {
     return {
       ecoStatus: [],
       studentDis: [],
-      tempHousing: []
+      tempHousing: [],
+      suspensions:[]
     };
   },
   methods: {
@@ -39,6 +54,10 @@ export default {
     pushToTempHousing() {
       this.tempHousing.pop();
       this.tempHousing.push(this.activeSchool[0].studentsTempHousing);
+    },
+    pushToSuspensions(){
+      this.suspensions.pop();
+      this.suspensions.push(this.activeSchool[0].suspensions)
     }
   },
   watch: {
@@ -46,6 +65,7 @@ export default {
       this.pushToEcoStatus();
       this.pushToStudentDis();
       this.pushToTempHousing();
+      this.pushToSuspensions();
     }
   }
 };

@@ -1,40 +1,53 @@
 <template>
-  <div>
-    <div v-if="activeSchool[0] !== undefined">
-      <CommunityMapBrooklyn v-if="activeSchool[0].id === 2"/>
+  <div v-if="activeSchool[0] !== undefined">
+    <div>
+      <CommunityMapBrooklyn v-if="activeSchool[0].id === 2" />
       <CommunityMapBronx v-if="activeSchool[0].id === 1" />
-      <h2 class="school-subheader">{{activeSchool[0].school}}</h2>
-      <p class="table-note">Located in Community District {{activeSchool[0].communityDistrict}} and {{activeSchool[0].schoolDistrict}} in {{activeSchool[0].borough}}.</p>
-      <p v-html="activeSchool[0].info"></p>
+      <CommunityMapManhattan v-if="activeSchool[0].id === 3" />
+      <h2 class="school-subheader">{{ activeSchool[0].school }}</h2>
+      <p class="table-note">
+        Located in Community District
+        {{ activeSchool[0].communityDistrict }} and
+        {{ activeSchool[0].schoolDistrict }} in {{ activeSchool[0].borough }}.
+      </p>
     </div>
     <h2>Community District Data</h2>
     <div class="dashboard">
-      <HorizontalBars />
-      <div class="bar-graph-flex-container">
-        <Graph :activeData="childPoverty" :graphId="'child-poverty'" />
-        <Graph :activeData="unemployment" :graphId="'unemployment'" />
+      <div class="header-flex-container">
+        <p>Indicator</p>
+        <p>{{ activeSchool[0].communityDistrict }}</p>
+        <p>{{ activeSchool[0].borough }}</p>
+        <p>NYC</p>
       </div>
-      <Stats :activeStat="investigations" />
-      <div class="bar-graph-flex-container">
-        <Graph :activeData="rentBurden" :graphId="'rent-burden'" />
-        <Graph :activeData="overcrowded" :graphId="'over-crowded-housing'" />
-      </div>
+      <HorizontalBars :activeData="childPoverty" :graphId="'child-poverty'" />
+      <HorizontalBars :activeData="unemployment" :graphId="'unemployment'" />
+      <HorizontalBars :activeData="countyUnemployed" :graphId="'county-unemployment'" />
+      <HorizontalBars :activeData="rentBurden" :graphId="'rent-burden'" />
+      <HorizontalBars
+        :activeData="overcrowded"
+        :graphId="'over-crowded-housing'"
+      />
+      <HorizontalBars :activeData="childrenInShelter" :graphId="'shelter'" />
+      <HorizontalBars
+        :activeData="disconnect"
+        :graphId="'disconnected-youth'"
+      />
+      <HorizontalBars :activeData="internet" :graphId="'internet'" />
     </div>
+    <p v-html="activeSchool[0].info"></p>
   </div>
 </template>
 
 <script>
-import Graph from "@/components/Graph.vue";
-import Stats from "@/components/Stats.vue";
 import CommunityMapBrooklyn from "@/components/CommunityMapBrooklyn.vue";
-import CommunityMapBronx from '@/components/CommunityMapBronx.vue';
-import HorizontalBars from '@/components HorizontalBars.vue';
+import CommunityMapBronx from "@/components/CommunityMapBronx.vue";
+import CommunityMapManhattan from "@/components/CommunityMapManhattan.vue";
+import HorizontalBars from "@/components/HorizontalBars.vue";
 export default {
   components: {
-    Stats,
-    Graph,
     CommunityMapBrooklyn,
     CommunityMapBronx,
+    CommunityMapManhattan,
     HorizontalBars
   },
   props: {
@@ -42,19 +55,18 @@ export default {
   },
   data() {
     return {
-      popUnder18: [],
       childPoverty: [],
       unemployment: [],
       investigations: [],
       rentBurden: [],
-      overcrowded: []
+      overcrowded: [],
+      childrenInShelter: [],
+      disconnect: [],
+      internet: [],
+      countyUnemployed: []
     };
   },
   methods: {
-    pushToPop() {
-      this.popUnder18 = [];
-      this.popUnder18.push(this.activeSchool[0].under18);
-    },
     pushToPoverty() {
       this.childPoverty = [];
       this.childPoverty.push(this.activeSchool[0].childPoverty);
@@ -74,16 +86,35 @@ export default {
     pushToOvercrowded() {
       this.overcrowded = [];
       this.overcrowded.push(this.activeSchool[0].overCrowdedHousing);
+    },
+    pushToChildrenInShelter() {
+      this.childrenInShelter = [];
+      this.childrenInShelter.push(this.activeSchool[0].famWithChildrenShelter);
+    },
+    pushToDisconnectedYouth() {
+      this.disconnect = [];
+      this.disconnect.push(this.activeSchool[0].disconnectedYouth);
+    },
+    pushToInternet() {
+      this.internet = [];
+      this.internet.push(this.activeSchool[0].noInternet);
+    },
+    pushToCountyUnemployed() {
+      this.countyUnemployed = [];
+      this.countyUnemployed.push(this.activeSchool[0].countyUnemployment);
     }
   },
   watch: {
     activeSchool() {
-      this.pushToPop();
       this.pushToPoverty();
       this.pushToUnemployment();
       this.pushToInvestigations();
       this.pushToRentBurden();
       this.pushToOvercrowded();
+      this.pushToChildrenInShelter();
+      this.pushToDisconnectedYouth();
+      this.pushToInternet();
+      this.pushToCountyUnemployed();
     }
   }
 };
