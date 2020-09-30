@@ -1,6 +1,14 @@
 import Vue from "vue";
 import App from "./App.vue";
-import * as d3 from "d3";
+import { scaleLinear } from "d3-scale";
+import { scaleBand } from "d3-scale";
+import {axisBottom} from 'd3-axis';
+import {axisLeft} from 'd3-axis'
+import { select } from "d3-selection";
+import { max } from "d3-array";
+import {min} from 'd3-array'
+import {line } from 'd3-shape'
+import  {curveLinear} from 'd3-shape'
 
 Vue.config.productionTip = false;
 
@@ -57,8 +65,7 @@ const lineChartLegendLabels = [
   "65 and older",
 ];
 
-const xScale = d3
-  .scaleBand()
+const xScale = scaleBand()
   .range([0, width])
   .domain(
     firstGroupData.map((d) => {
@@ -66,26 +73,23 @@ const xScale = d3
     })
   );
 
-const yScale = d3
-  .scaleLinear()
+const yScale = scaleLinear()
   .rangeRound([height, 0])
   .domain([
-    d3.min(fifthGroupData, (d) => d.rate) - 5,
-    d3.max(firstGroupData, (d) => d.rate) + 10,
+    min(fifthGroupData, (d) => d.rate) - 5,
+    max(firstGroupData, (d) => d.rate) + 10,
   ]);
 
-let drawLine = d3
-  .line()
+let drawLine = line()
   .x((d) => {
     return xScale(d.date) + xScale.bandwidth() / 2;
   })
   .y((d) => {
     return yScale(d.rate);
   })
-  .curve(d3.curveLinear);
+  .curve(curveLinear);
 
-const lineChartSVG = d3
-  .select("#line-chart svg")
+const lineChartSVG = select("#line-chart svg")
   .attr("width", width + margin.right + margin.left)
   .attr("height", height + margin.top + margin.bottom);
 
@@ -94,7 +98,7 @@ const xAxis = () => {
     .append("g")
     .attr("transform", `translate(${margin.left},${height})`)
     .attr("class", "x-axis")
-    .call(d3.axisBottom(xScale).tickSizeOuter(0));
+    .call(axisBottom(xScale).tickSizeOuter(0));
 };
 xAxis();
 
@@ -103,9 +107,7 @@ const yAxis = () => {
     .append("g")
     .attr("class", "y-axis")
     .attr("transform", `translate(${margin.left},0)`)
-    .call(
-      d3
-        .axisLeft(yScale)
+    .call(axisLeft(yScale)
         .tickFormat((d) => d + "%")
         .ticks(5)
     );

@@ -6,7 +6,11 @@
 </template>
 
 <script>
-import * as d3 from "d3";
+import { scaleLinear } from "d3-scale";
+import { select } from "d3-selection";
+import { selectAll } from "d3-selection";
+import { max } from "d3-array";
+import {transition} from 'd3-transition'
 
 export default {
   props: {
@@ -23,18 +27,20 @@ export default {
   },
   computed: {
     xScale() {
-      return d3
-        .scaleLinear()
+      return scaleLinear()
         .range([0, 100])
         .domain([
           0,
-          d3.max(this.filteredData[0], d => {
+          max(this.filteredData[0], d => {
             return d.stat;
           })
         ]);
     }
   },
   methods: {
+    t(){
+transition().duration(1000)
+    },
     filterData() {
       this.filteredData.pop();
       this.filteredData.push(
@@ -44,28 +50,30 @@ export default {
       );
     },
     createSVG() {
-      d3.select(`#${this.graphId} svg`)
+      select(`#${this.graphId} svg`)
         .attr("width", this.width)
         .attr("height", this.height);
     },
-    createBackground(){
-      d3.select(`#${this.graphId} svg`)
-      .append("g")
+    createBackground() {
+      select(`#${this.graphId} svg`)
+        .append("g")
         .attr("class", "background-bars")
         .selectAll("rect")
-        .data(["a","b","c"])
+        .data(["a", "b", "c"])
         .enter()
         .append("rect")
         .attr("y", 0)
         .attr("x", (d, i) => [0, 100 + this.padding, 200 + this.padding * 2][i])
         .attr("height", this.height)
         .attr("fill", "whitesmoke")
-        .attr('width',100)
+        .attr("width", 100);
     },
     createBars() {
-      d3.selectAll(`#${this.graphId} svg .bars, #${this.graphId} svg .labels`).remove();
+      selectAll(
+        `#${this.graphId} svg .bars, #${this.graphId} svg .labels`
+      ).remove();
 
-      d3.select(`#${this.graphId} svg`)
+      select(`#${this.graphId} svg`)
         .append("g")
         .attr("class", "bars")
         .selectAll("rect")
@@ -76,7 +84,7 @@ export default {
         .attr("x", (d, i) => [0, 100 + this.padding, 200 + this.padding * 2][i])
         .attr("height", this.height)
         .attr("fill", "#87c8ea")
-        .transition()
+        .transition(this.t)
         .duration(1000)
         .attr("width", d => {
           return this.xScale(d.stat);
@@ -84,16 +92,16 @@ export default {
         .delay((d, i) => i * 100);
     },
     addLabels() {
-      d3.select(`#${this.graphId} svg .labels`).remove();
-      d3.select(`#${this.graphId} svg`)
+      select(`#${this.graphId} svg .labels`).remove();
+      select(`#${this.graphId} svg`)
         .append("g")
         .attr("class", "labels")
         .selectAll("text")
         .data(this.filteredData[0])
         .enter()
         .append("text")
-        .text(d => d.stat !==0 ? d.stat + "%" : "-")
-        .attr("x", (d, i) => d.stat !== 0 ? [70, 170, 270][i] : [50][i])
+        .text(d => (d.stat !== 0 ? d.stat + "%" : "-"))
+        .attr("x", (d, i) => (d.stat !== 0 ? [70, 170, 270][i] : [50][i]))
         .attr("y", this.height / 1.5)
         .attr("text-anchor", "middle");
     }
