@@ -12,7 +12,10 @@
       </p>
     </div>
     <p v-html="activeSchool[0].info"></p>
-    <h2><span style="color:#0099cd">{{activeSchool[0].communityDistrict}}</span> compared to {{activeSchool[0].borough}} and NYC</h2>
+    <h2>
+      <span style="color:#0099cd">{{ activeSchool[0].communityDistrict }}</span>
+      compared to {{ activeSchool[0].borough }} and NYC
+    </h2>
     <div class="dashboard">
       <div class="header-flex-container">
         <p>Indicator</p>
@@ -22,7 +25,10 @@
       </div>
       <HorizontalBars :activeData="childPoverty" :graphId="'child-poverty'" />
       <HorizontalBars :activeData="unemployment" :graphId="'unemployment'" />
-      <HorizontalBars :activeData="countyUnemployed" :graphId="'county-unemployment'" />
+      <HorizontalBars
+        :activeData="countyUnemployed"
+        :graphId="'county-unemployment'"
+      />
       <HorizontalBars :activeData="rentBurden" :graphId="'rent-burden'" />
       <HorizontalBars
         :activeData="overcrowded"
@@ -67,54 +73,31 @@ export default {
     };
   },
   methods: {
-    pushToPoverty() {
+    pushToData() {
       this.childPoverty = [];
       this.childPoverty.push(this.activeSchool[0].childPoverty);
-    },
-    pushToUnemployment() {
       this.unemployment = [];
       this.unemployment.push(this.activeSchool[0].unemployment);
-    },
-    pushToInvestigations() {
       this.investigations = [];
       this.investigations.push(this.activeSchool[0].investigations);
-    },
-    pushToRentBurden() {
       this.rentBurden = [];
       this.rentBurden.push(this.activeSchool[0].rentBurden);
-    },
-    pushToOvercrowded() {
       this.overcrowded = [];
       this.overcrowded.push(this.activeSchool[0].overCrowdedHousing);
-    },
-    pushToChildrenInShelter() {
       this.childrenInShelter = [];
       this.childrenInShelter.push(this.activeSchool[0].famWithChildrenShelter);
-    },
-    pushToDisconnectedYouth() {
       this.disconnect = [];
       this.disconnect.push(this.activeSchool[0].disconnectedYouth);
-    },
-    pushToInternet() {
       this.internet = [];
       this.internet.push(this.activeSchool[0].noInternet);
-    },
-    pushToCountyUnemployed() {
       this.countyUnemployed = [];
       this.countyUnemployed.push(this.activeSchool[0].countyUnemployment);
     }
   },
+
   watch: {
     activeSchool() {
-      this.pushToPoverty();
-      this.pushToUnemployment();
-      this.pushToInvestigations();
-      this.pushToRentBurden();
-      this.pushToOvercrowded();
-      this.pushToChildrenInShelter();
-      this.pushToDisconnectedYouth();
-      this.pushToInternet();
-      this.pushToCountyUnemployed();
+     this.pushToData();
     }
   }
 };

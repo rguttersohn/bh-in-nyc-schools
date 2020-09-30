@@ -10,7 +10,7 @@ import { scaleLinear } from "d3-scale";
 import { select } from "d3-selection";
 import { selectAll } from "d3-selection";
 import { max } from "d3-array";
-import {transition} from 'd3-transition'
+import { transition } from "d3-transition";
 
 export default {
   props: {
@@ -38,8 +38,8 @@ export default {
     }
   },
   methods: {
-    t(){
-transition().duration(1000)
+    t() {
+      transition().duration(1000);
     },
     filterData() {
       this.filteredData.pop();
