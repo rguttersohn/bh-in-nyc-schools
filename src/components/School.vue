@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>School District Data</h2>
+  <div v-if="activeSchool[0] !== undefined">
+    <h2><span style="color:#0099cd">{{activeSchool[0].shortName}}</span> compared to {{activeSchool[0].schoolDistrict}} and NYC</h2>
     <div class="dashboard">
         <div class="header-flex-container">
         <p>Indicator</p>
@@ -9,17 +9,17 @@
         <p>NYC</p>
       </div>
       <HorizontalBars
-        :activeData="ecoStatus"
-        :graphId="'student-economic-status'"
+        :activeData="tempHousing"
+        :graphId="'students-temp-housing'"
       />
-      <HorizontalBars
+       <HorizontalBars
         :activeData="studentDis"
         :graphId="'students-disabilities'"
       />
       <HorizontalBars
-        :activeData="tempHousing"
-        :graphId="'students-temp-housing'"
-      />
+        :activeData="ecoStatus"
+        :graphId="'student-economic-status'"
+      />      
       <HorizontalBars :activeData="suspensions" :graphId="'suspensions'"/>
     </div>
   </div>

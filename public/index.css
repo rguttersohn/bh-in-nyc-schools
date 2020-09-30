@@ -200,7 +200,8 @@ h3 {
 }
 
 .dashboard .header-flex-container p {
-  width: 90px;
+  width: 100px;
+  margin-right:0px;
 }
 
 .legend-wrapper {
@@ -386,6 +387,40 @@ school-button:focus {
   font-size: 80%;
   font-weight: normal;
   font-style: italic;
+}
+
+.sources-wrapper{
+  background-color: whitesmoke;
+  padding: 1% 0;
+  margin: 3% auto;
+}
+
+.sources-wrapper h2{
+  cursor:pointer;
+}
+
+.sources-wrapper h2::after{
+  content:"+";
+}
+
+.source-list {
+max-height:0;
+overflow:hidden;
+transition:max-height 0.3s ease-in-out;
+}
+
+.source-list .table-note span{
+ display:inline;
+ font-weight:bold;
+}
+
+
+.source-list .table-note {
+  text-align:left;
+}
+
+.source-list-active{
+  max-height:100%;
 }
 @media screen and (max-width: 800px) {
   .step-container p {

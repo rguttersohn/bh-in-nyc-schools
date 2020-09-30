@@ -11,7 +11,8 @@
         {{ activeSchool[0].schoolDistrict }} in {{ activeSchool[0].borough }}.
       </p>
     </div>
-    <h2>Community District Data</h2>
+    <p v-html="activeSchool[0].info"></p>
+    <h2><span style="color:#0099cd">{{activeSchool[0].communityDistrict}}</span> compared to {{activeSchool[0].borough}} and NYC</h2>
     <div class="dashboard">
       <div class="header-flex-container">
         <p>Indicator</p>
@@ -34,7 +35,6 @@
       />
       <HorizontalBars :activeData="internet" :graphId="'internet'" />
     </div>
-    <p v-html="activeSchool[0].info"></p>
   </div>
 </template>
 
