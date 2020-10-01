@@ -57,21 +57,6 @@ h3 {
   line-height: 150%;
 }
 
-.step-container section {
-  margin: 5% auto;
-  padding-bottom: 10%;
-}
-
-.step-container section:first-of-type {
-  border-top: none;
-  margin-top: 0;
-}
-
-.step-container section:last-of-type {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
 .step-container h3 {
   font-weight: bolder;
   text-align: center;
@@ -93,12 +78,6 @@ h3 {
   text-align: center;
 }
 
-.step-container .priorities {
-  text-align: center;
-  color: #0099cd;
-  text-transform: none;
-  line-height: 100%;
-}
 
 /*css for the aside box*/
 
@@ -273,32 +252,6 @@ h3 {
   justify-content: space-evenly;
 }
 
-.graph-wrapper#essential-industries div h3 {
-  margin: auto;
-}
-.graph-wrapper .data-table {
-  width: 70%;
-  margin: auto;
-}
-.graph-wrapper .data-table .data-table-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.graph-wrapper .data-table .data-table-container p {
-  font-weight: normal;
-  width: 33%;
-}
-
-.graph-wrapper .data-table .data-table-container:nth-child(1) {
-  font-weight: bold;
-  border-bottom: 3px solid black;
-}
-
-.graph-wrapper .data-table .data-table-container:hover {
-  background-color: gainsboro;
-}
 
 .button-container {
   position: sticky;
