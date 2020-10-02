@@ -13,7 +13,7 @@
         id="g-Brooklyn-School---500px-Artboard_2-img"
         class="g-aiImg"
         alt=""
-        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Brooklyn-School-500px-Artboard_2.png"
+        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Brooklyn-School-500px-Artboard_2-1.png"
       />
       <div
         id="g-ai0-1"
@@ -79,6 +79,13 @@
         <p class="g-pstyle0">11224</p>
       </div>
       <div
+        id="g-ai0-8"
+        class="g-Isolation_Mode g-aiAbs g-aiPointText"
+        style="top:50.7693%;margin-top:-7.7px;left:54.839%;margin-left:-22px;width:44px;"
+      >
+        <p class="g-pstyle1">11235</p>
+      </div>
+      <div
         id="g-ai0-10"
         class="g-Other_3 g-aiAbs g-aiPointText"
         style="top:68.3745%;margin-top:-8.2px;left:74.6659%;width:106px;"
@@ -102,35 +109,35 @@
       <div
         id="g-ai0-13"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:78.9572%;margin-top:-6.3px;left:75.1096%;width:79px;"
+        style="top:78.9572%;margin-top:-6.3px;left:74.6659%;width:79px;"
       >
         <p class="g-pstyle2">Coney Island</p>
       </div>
       <div
         id="g-ai0-14"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:81.8345%;margin-top:-6.3px;left:75.1096%;width:104px;"
+        style="top:81.8345%;margin-top:-6.3px;left:74.6659%;width:104px;"
       >
         <p class="g-pstyle2">Community District</p>
       </div>
       <div
         id="g-ai0-15"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:84.4721%;margin-top:-6.3px;left:75.1096%;width:46px;"
+        style="top:84.4721%;margin-top:-6.3px;left:74.6659%;width:46px;"
       >
         <p class="g-pstyle2">(K13)</p>
       </div>
       <div
         id="g-ai0-16"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:88.3086%;margin-top:-6.3px;left:75.447%;width:110px;"
+        style="top:88.3086%;margin-top:-6.3px;left:74.6659%;width:110px;"
       >
         <p class="g-pstyle2">Zip Code 11224 and</p>
       </div>
       <div
         id="g-ai0-17"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:90.9462%;margin-top:-6.3px;left:75.2364%;width:48px;"
+        style="top:90.9462%;margin-top:-6.3px;left:74.6659%;width:48px;"
       >
         <p class="g-pstyle2">11235</p>
       </div>
@@ -144,7 +151,7 @@
       <div
         id="g-ai0-19"
         class="g-Other_3 g-aiAbs g-aiPointText"
-        style="top:97.0135%;margin-top:-4.6px;left:88.2722%;margin-left:-13px;width:26px;"
+        style="top:97.0135%;margin-top:-4.6px;left:88%;margin-left:-13px;width:26px;"
       >
         <p class="g-pstyle3">2</p>
       </div>
@@ -171,7 +178,8 @@ export default {};
 #g-Brooklyn-School---500px-box .g-artboard {
   margin: 0 auto;
 }
-#g-Brooklyn-School---500px-box p ,#g-Brooklyn-School---500px-box img {
+#g-Brooklyn-School---500px-box p,
+#g-Brooklyn-School---500px-box img {
   margin: 0;
 }
 #g-Brooklyn-School---500px-box .g-aiAbs {
@@ -202,7 +210,7 @@ export default {};
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   letter-spacing: 0em;
-  font-size: 10px;
+  font-size: 11px;
   text-align: left;
   color: rgb(0, 0, 0);
   text-transform: none;
@@ -215,7 +223,7 @@ export default {};
 #g-Brooklyn-School---500px-Artboard_2 .g-pstyle0 {
   line-height: 10px;
   height: 10px;
-  font-size: 8px;
+  font-size: 11px;
   text-align: center;
 }
 #g-Brooklyn-School---500px-Artboard_2 .g-pstyle1 {
@@ -229,7 +237,7 @@ export default {};
 #g-Brooklyn-School---500px-Artboard_2 .g-pstyle3 {
   line-height: 8px;
   height: 8px;
-  font-size: 7px;
+  font-size: 11px;
   text-align: center;
 }
 #g-Brooklyn-School---500px-Artboard_2 .g-pstyle4 {

@@ -34,7 +34,10 @@ export default {
           schoolDistrict:
             "School District 12 (Crotona Park, Morrisania Melrose)",
           borough: "The Bronx",
-          info: `<p>This school is in Morrisania (CD B03) in the Bronx. Say something about Risk Ranking and this CD  being among the highest risk communities.</p>`,
+          info: [
+            `<p>Fannie Lou Hamer Freedom High School is a community school located in the South Bronx. The school received a large portion of funding through the Community School Grant Initiative, a former state grant that was funded by the city until it was cut in the most recent budget. With these funds, the school offered mental health services, as well as upstream prevention services such as food, vision services, tutoring and mentorship. All of these services are at risk as a result of the budget cut to Community Schools.</p>`,
+            `<p>The community district where Fannie Lou Hamer is located, Morrisania, is home to more than 23,000 children, and 50% of these children live in households with incomes below the poverty line. Residents in Morrisania have a higher unemployment rate compared to the Bronx and New York City averages before the pandemic. This July, Bronx’s unemployment rate exceeded 21%. The resulting loss of income, food security and housing stability underscores the dire need to maintain the services now at risk at Fannie Lou Hamer. Additionally, Fannie Lou Hamer has a higher-than-average proportion of instances of removals and suspensions, highlighting the critical need to enhance whole-school approaches that support the social/emotional needs of students.</p>`
+          ],
           childPoverty: [
             { header: "Child Poverty Rate (2018)" },
             { id: "child-poverty" },
@@ -64,7 +67,7 @@ export default {
             },
             { id: "rent-burden" },
             { category: "CD B03", stat: 35.6 },
-            { category: "Bronx", stat: 33 },
+            { category: "Bronx", stat: 33.0 },
             { category: "NYC", stat: 26.7 }
           ],
           overCrowdedHousing: [
@@ -88,7 +91,7 @@ export default {
           ],
           disconnectedYouth: [
             {
-              header: "Disconnected Youth(2018)"
+              header: "Disconnected Youth (2018)"
             },
             { id: "disconnected-youth" },
             { category: "CD B03", stat: 20.8 },
@@ -103,7 +106,7 @@ export default {
             { category: "NYC", stat: 15.8 }
           ],
           studentsTempHousing: [
-            { header: "Students Living in Temporary Housing (SY 2019)" },
+            { header: "Students Living in Temporary Housing<br>(SY 2019)" },
             { id: "students-temp-housing" },
             { category: "Fannie Lou Hamer Freedom High School", stat: 12.7 },
             { category: "SD 12", stat: 20.1 },
@@ -131,7 +134,7 @@ export default {
             { id: "suspensions" },
             { category: "Fannie Lou Hamer Freedom High School", stat: 23.4 },
             { category: "SD 12", stat: 8.8 },
-            { category: "NYC", stat: 4 }
+            { category: "NYC", stat: 4.0 }
           ]
         },
         {
@@ -141,12 +144,15 @@ export default {
           communityDistrict: "Coney Island (CD K13)",
           schoolDistrict: "School District 21 (Gravesand, Coney Island)",
           borough: "Brooklyn",
-          info: `<p>This school is in Brooklyn. Say something about Risk Ranking and this CD being among moderate risk communities, but moderate-high in health domain.</p>`,
+          info: [
+            `<p>William E. Grady is a career and technical education high school in South Brooklyn. As a recipient of the state-funded Extended School Day/School Violence Prevention grant, the school was able to contract with Counseling in Schools, a non-profit that provides students at the school with behavioral health counseling, Unfortunately, the state grant that funds their contract has yet to be renewed, and money owed for the counseling services last school year was withheld as part of the previous statewide withholding.</p>`,
+            `<p>Grady HS has a higher than average enrollment of students with disabilities, and a much higher rate of removals and suspensions. This school is also located in an area of the city that was hit particularly hard by the virus. More than 2,300 positive cases were reported, and more than 300 residents died due to COVID-19 in zip code 11235, making it the sixth-highest zip code in the city for fatalities due to COVID-19. These students, already at a higher need for behavioral health support, may have experienced more trauma and loss of loved ones. This is a time to invest in counseling services for students, not cut them.</p>`
+          ],
           childPoverty: [
             { header: "Child Poverty Rate (2018)" },
             { id: "child-poverty" },
             { category: "CD K13", stat: 37.6 },
-            { category: "Brooklyn", stat: 26 },
+            { category: "Brooklyn", stat: 26.0 },
             { category: "NYC", stat: 23.8 }
           ],
           unemployment: [
@@ -186,7 +192,7 @@ export default {
           famWithChildrenShelter: [
             {
               header:
-                "Families with Children in Homeless Shelters (rate per 1,000 households) (FY 2018)"
+                "Families with Children in Homeless Shelters <br> (rate per 1,000 households) (FY 2018)"
             },
             { id: "shelter" },
             { category: "CD K13", stat: 2.1 },
@@ -195,7 +201,7 @@ export default {
           ],
           disconnectedYouth: [
             {
-              header: "Disconnected Youth(2018)"
+              header: "Disconnected Youth (2018)"
             },
             { id: "disconnected-youth" },
             { category: "CD K13", stat: 12.8 },
@@ -205,15 +211,15 @@ export default {
           noInternet: [
             { header: "Households without Internet (2018)" },
             { id: "internet" },
-            { category: "CD K13", stat: 27.3 },
-            { category: "Broooklyn", stat: 21.3 },
+            { category: "CD K13", stat: 25.1 },
+            { category: "Broooklyn", stat: 17.2 },
             { category: "NYC", stat: 15.8 }
           ],
           studentsTempHousing: [
-            { header: "Students Living in Temporary Housing (SY 2019)" },
+            { header: "Students Living in Temporary Housing<br>(SY 2019)" },
             { id: "students-temp-housing" },
             { category: "William E. Grady CTE HIgh School", stat: 11.2 },
-            { category: "SD 21", stat: 6 },
+            { category: "SD 21", stat: 6.0 },
             { category: "NYC", stat: 10.2 }
           ],
           studentsDisabilities: [
@@ -248,7 +254,11 @@ export default {
           communityDistrict: "Manhattanville (CD M09)",
           schoolDistrict: "School District 5 (Central Harlem)",
           borough: "Manhattan",
-          info: `<p>This school is in Manhattanville in ... you guessed it ... Manhattan</p>`,
+          info: [
+            `<p>The Academy for Future Leaders is a middle school in Harlem and part of The Urban Assembly network of schools. In partnership with the network, AFL has done extraordinary work to build a positive environment and expand the school’s capacity for social-emotional learning. Since implementation of their social-emotional learning program <a href="http://www.resilientscholars.org/" target="_blank">Resilient Scholars</a>, school suspensions have dropped by 70%, but many of the school’s central supports are currently at risk due to the DOE’s reluctance to fund contracts for networks like The Urban Assembly.</p>`,
+            `<p>About 20% of students in AFL’s School District 5 (Central Harlem) live in temporary housing, compared to 10% citywide. The community district of Central Harlem has higher rates of severe rent burden, overcrowded housing, and households without internet compared to the city averages. These students may be entering the blended school year with added stress, trauma, and steeper challenges to successful remote engagement. Fostering a positive environment and social-emotional learning is tantamount to their long-term success; now is not the time to dismantle central school supports like UA. 
+          </p>`
+          ],
           childPoverty: [
             { header: "Child Poverty Rate (2018)" },
             { id: "child-poverty" },
@@ -293,7 +303,7 @@ export default {
           famWithChildrenShelter: [
             {
               header:
-                "Families with Children in Homeless Shelters (rate per 1,000 households) (FY 2018)"
+                "Families with Children in Homeless Shelters<br>(rate per 1,000 households) (FY 2018)"
             },
             { id: "shelter" },
             { category: "CD M09", stat: 3.1 },
@@ -302,7 +312,7 @@ export default {
           ],
           disconnectedYouth: [
             {
-              header: "Disconnected Youth(2018)"
+              header: "Disconnected Youth (2018)"
             },
             { id: "disconnected-youth" },
             { category: "CD M09", stat: 8.8 },
@@ -317,9 +327,9 @@ export default {
             { category: "NYC", stat: 15.8 }
           ],
           studentsTempHousing: [
-            { header: "Students Living in Temporary Housing (SY 2019)" },
+            { header: "Students Living in Temporary Housing<br>(SY 2019)" },
             { id: "students-temp-housing" },
-            { category: "Urban Assembly Academy for Future Leaders", stat: 20 },
+            { category: "Urban Assembly Academy for Future Leaders", stat: 20.0 },
             { category: "SD 5", stat: 20.2 },
             { category: "NYC", stat: 10.2 }
           ],
@@ -363,7 +373,7 @@ export default {
           id: 1,
           info:
             "U.S. Census Bureau, American Community Survey: Child Poverty Rate (2018), Unemployment Rate (2019), Severe Rent Burden (2018), Overcrowded Housing (2018), Disconnected Youth (2018), Households without Internet (2018).",
-          url: ["https://data.cccnewyork.org/"]
+          url: ["https://data.cccnewyork.org/data"]
         },
         {
           id: 2,
@@ -375,15 +385,17 @@ export default {
           id: 3,
           info:
             "New York City Department of Homeless Services: Families with Children in Homeless Shelters (rate per 1,000 households) (FY 2018)",
-          url: ["https://data.cccnewyork.org/"]
+          url: [
+            "https://data.cccnewyork.org/data/map/1308/families-with-children-in-homeless-shelters#1308/a/3/1587/40/a/a"
+          ]
         },
         {
           id: 4,
           info:
             "New York City Department of Education, Demographic Snapshots: Students with Disabilities (IEP) (SY 2020), and Students in Poverty (SY 2020)",
           url: [
-            "https://data.cccnewyork.org/",
-            "https://infohub.nyced.org/reports/school-quality/information-and-data-overview."
+            "https://data.cccnewyork.org/data/map/1278/students-with-disabilities-iep#1278/a/5/1481/99/a/a",
+            "https://infohub.nyced.org/reports/school-quality/information-and-data-overview"
           ]
         },
         {
@@ -391,7 +403,7 @@ export default {
           info:
             "New York City Department of Education, Students in Temporary Housing Reports: Students Living in Temporary Housing (SY 2019)",
           url: [
-            "https://data.cccnewyork.org/",
+            "https://data.cccnewyork.org/data/map/1282/students-living-in-temporary-housing#1282/a/5/1489/62/a/a",
             "https://infohub.nyced.org/reports/government-reports/students-in-temporary-housing-reports"
           ]
         },
@@ -427,7 +439,7 @@ export default {
         },
         {
           category:
-            "Families with Children in Homeless Shelters (rate per 1,000 households)",
+            "Families with Children in Homeless Shelters<br>(rate per 1,000 households)",
           define:
             "The number of families in Department of Homeless Services family shelters as of June 30th (the last month of the city fiscal year), by their last community district of residence."
         },

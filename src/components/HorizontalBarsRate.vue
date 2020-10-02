@@ -99,7 +99,7 @@ export default {
         .data(this.filteredData[0])
         .enter()
         .append("text")
-        .text(d => (d.stat !== 0 ? d.stat + "%" : "-"))
+        .text(d => (d.stat))
         .attr("x", (d, i) => (d.stat !== 0 ? [70, 170, 270][i] : [50][i]))
         .attr("y", this.height / 1.5)
         .attr("text-anchor", "middle");

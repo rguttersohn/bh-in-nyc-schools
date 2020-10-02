@@ -13,7 +13,7 @@
         id="g-Manhattan-School--500px-Artboard_2-img"
         class="g-aiImg"
         alt=""
-        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Manhattan-School-500px-Artboard_2-1.png"
+        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Manhattan-School-500px-Artboard_2.png"
       />
       <div
         id="g-ai0-1"
@@ -53,7 +53,7 @@
       <div
         id="g-ai0-6"
         class="g-Zip_Code_10027_-_Default g-aiAbs g-aiPointText"
-        style="top:54.1841%;margin-top:-5.9px;left:43.0342%;margin-left:-22.5px;width:45px;"
+        style="top:60.1841%;margin-top:-5.9px;left:50.0342%;margin-left:-22.5px;width:45px;"
       >
         <p class="g-pstyle0">10027</p>
       </div>
@@ -185,7 +185,7 @@ export default {};
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
   letter-spacing: 0em;
-  font-size: 10px;
+  font-size: 11px;
   text-align: left;
   color: rgb(0, 0, 0);
   text-transform: none;
@@ -198,7 +198,7 @@ export default {};
 #g-Manhattan-School--500px-Artboard_2 .g-pstyle0 {
   line-height: 10px;
   height: 10px;
-  font-size: 8px;
+  font-size: 11px;
   text-align: center;
 }
 #g-Manhattan-School--500px-Artboard_2 .g-pstyle1 {
@@ -211,7 +211,7 @@ export default {};
 #g-Manhattan-School--500px-Artboard_2 .g-pstyle3 {
   line-height: 9px;
   height: 9px;
-  font-size: 7px;
+  font-size: 11px;
   text-align: center;
 }
 #g-Manhattan-School--500px-Artboard_2 .g-pstyle4 {

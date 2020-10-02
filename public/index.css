@@ -166,6 +166,14 @@ h3 {
   position: relative;
   top: 35px;
 }
+.graph-wrapper div {
+  margin:3% auto;
+}
+.graph-wrapper .info p{
+  text-align: left;
+  font-weight:initial;
+  width:100%;
+}
 .dashboard{
   margin:auto;
 }
@@ -242,16 +250,6 @@ h3 {
 .stacked-bar-chart-wrapper#industry-immigration-status .container span {
   width: 250px;
 }
-
-.graph-wrapper * {
-  transition: opacity 0.3s ease-in-out;
-}
-
-.graph-wrapper#essential-industries div {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 
 .button-container {
   position: sticky;

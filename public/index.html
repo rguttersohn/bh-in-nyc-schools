@@ -1,36 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" href="index.css">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <main class="step-container">
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste rem eum perspiciatis doloremque saepe ut quaerat soluta consequatur, inventore quisquam alias? Delectus veritatis perspiciatis laudantium est id autem debitis nulla.
-      </p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium provident aperiam nostrum eaque commodi. Perferendis nostrum quis alias non odio odit laboriosam vel amet repudiandae voluptate, nobis repellat, tempora pariatur.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus soluta ex ullam eius architecto! Fugit temporibus, harum molestias doloribus, explicabo aliquam tempora culpa itaque asperiores, eligendi laborum aut sint nisi.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis beatae voluptate vero, temporibus aut vel minus magnam quisquam quas explicabo provident consequatur neque, saepe reprehenderit tenetur autem, quasi commodi sapiente.</p>
-      <div class="graph-wrapper" id="line-chart">
-        <h3>Reported Symptoms of Anxiety and/or Depression, by Age Group in the New York (MSA)
-        </h3>
-        <svg/>
-        <div class="legend-wrapper">
-          <i></i><span></span><i></i><span></span><i></i><span></span><i></i><span></span><i></i><span></span>
-        </div>
-        <div class="tooltip"></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="index.css">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <main class="step-container">
+    <img src="https://www.cccnewyork.org/wp-content/uploads/2020/09/50404603342_807127291c_c.jpg" alt="Mayor Bill de Blasio, Chancellor Richard Carranza and Department of Health and Mental Hygiene Commissioner Dave  Chokshi join school leadership at One World Middle School at Edenwald in the Bronx to welcome students back to school on Thursday, October 1, 2020" style="margin-bottom: 10px">
+    <p class="table-note">Photo credit: Michael Appleton/Mayoral Photography Office</p>
+    <p>
+      For the past 8 months, COVID-19 has been impacting children and families in New York in profound and far-reaching
+      ways. Families are grappling with the <a
+        href="https://www.cccnewyork.org/blog/childrens-behavioral-health-must-be-prioritized-in-covid-relief-efforts/">trauma
+        of sickness and the loss of loved ones</a>. Lost wages and lost jobs have led to <a
+        href="https://www.cccnewyork.org/blog/economic-hardship-from-covid-19-facing-nycs-working-parents-and-youth/">severe
+        economic distress</a>, <a
+        href="https://www.cccnewyork.org/blog/more-resources-are-needed-to-combat-food-insecurity-in-new-york-and-across-the-country/">food
+        insecurity</a>, and <a
+        href="https://www.cccnewyork.org/blog/nyc-housing-affordability-and-homelessness-crises-exacerbated-by-covid-19/">threats
+        of housing instability and homelessness</a>. Students are struggling with serious learning loss and digital
+      barriers to school and social services, while young children in particular have seen <a
+        href="https://www.cms.gov/newsroom/press-releases/cms-issues-urgent-call-action-following-drastic-decline-care-children-medicaid-and-childrens-health"
+        target="_blank">distressing declines</a> in well-child visits, immunizations, and mental and developmental
+      screenings and services. All of these repercussions have overwhelmingly and disproportionately impacted children
+      and families in Black, Latinx, and immigrant households across the city and state.
+    </p>
+
+    <p>
+      A new study out this week speak directly to the impact of the pandemic on children. In this September 2020 <a
+        href="https://uhfnyc.org/publications/publication/covid-19-ripple-effect-impact-covid-19-children-new-york-state/?source=email"
+        target="_blank">report from United Hospital Fund</a>, 4,200 of New York State’s 4 million children experienced a
+      parental or caregiver death due to COVID-19, with Black and Hispanic children experiencing parental/caregiver
+      deaths at twice the rate of Asian and white children. 325,000 additional children in New York were pushed into or
+      near poverty due to the pandemic. It is difficult to underestimate the deep, long-lasting effects that these
+      losses and the other hardships of this pandemic will have on the mental health of children.
+    </p>
+
+    <p>
+      <strong>As families grapple with the challenges of remote learning and the uncertainty of school re-opening, they
+        are also facing an added challenge: How to access behavioral health services in the new school landscape created
+        by COVID-19.</strong>
+    </p>
+    <p>
+
+      School-based behavioral health services – such as psychiatric evaluations, individual and group therapy, crisis
+      intervention, and substance use prevention and intervention and creating supportive school environments  – play an essential role for students in need of
+      emotional or behavioral supports. One national study from the National Survey of Drug Use and Health (NSDUH) found
+      that more than 13% of adolescents received some form of mental health services in a school setting in the <a
+        href="https://www.ncbi.nlm.nih.gov/books/NBK362074/" target="_blank"> previous 12 months.</a> Additionally, 35% of adolescents who receive any mental health services <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/josh.12753" target="_blank">receive them exclusively from school settings.</a> With the initial closure of schools, many students lost both a source of stability, and a site
+      for identifying their mental health needs and connecting them to care. Despite this disruption, school-based programs have found creative ways to reach students through telehealth, and will continue to adapt to serve students in whatever settings they learn in.
+    </p>
+
+    <p>
+      <strong>With COVID-19, the need for behavioral health services both in and outside of school has never been
+        greater.</strong> The National Alliance on Mental Illness of NYC has reported a <a href="https://www.thecity.nyc/2020/7/16/21327408/black-mental-health-specialists-weathering-waves-of-trauma" target="_blank">60% increase</a> in calls to their
+      hotline since mid-March. New York’s youth are seeing a spike in reported symptoms of anxiety and/or depression
+      that are consistently higher than other age groups. From June to July, almost half of all youth aged 18 to 24
+      living in the New York metropolitan area reported symptoms of anxiety and/or depression.
+    </p>
+    <div class="graph-wrapper" id="line-chart">
+      <h3>Reported Symptoms of Anxiety and/or Depression, by Age Group in the New York MSA*
+      </h3>
+      <svg />
+      <div class="legend-wrapper">
+        <i></i><span></span><i></i><span></span><i></i><span></span><i></i><span></span><i></i><span></span>
       </div>
-      <div class="graph-wrapper">
-        <div id="app"></div>
-      </div>
-    </main>
-    <!-- built files will be auto injected -->
-  </body>
+      <div class="tooltip"></div>
+      <p class="table-note">Source: CCC’s analysis of the U.S. Census Bureau’s Household Pulse Survey collected from April to July 2020.</p>
+      <p class="table-note">*Estimates are based on a survey sample of residents in the New York Metropolitan Statistical Area, which encompasses New York City, Long Island, southern Westchester and Rockland counties, and northern New Jersey</p>
+    </div>
+    <p>
+      <strong>Importantly, the effects of this pandemic can be even more pronounced for children and
+        adolescents.</strong> <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jpc.15132"
+        target="_blank">Extensive research</a> on adverse childhood experiences tells us that the kinds of trauma caused
+      by COVID-19 – including economic and housing insecurity, disruptions in mental health care, and loss of loved ones
+      – have long-lasting repercussions across the health and wellbeing of children as they become adults. Though
+      hospitals saw a temporary decline in psychiatric patients during the height of COVID, doctors are seeing a <a
+        href="http://www.centernyc.org/news-center/2020/6/9/kids-and-covid-19-a-mental-health-crisis-looms"
+        target="_blank">growing number </a>of young people come to hospitals with dangerous psychiatric emergencies, and
+      fear that conditions will only worsen without a local, state, and federal response that supports the funding and
+      programs that are so critical for recovery.
+    </p>
+
+    <p>
+      <strong>Like all other aspects of this pandemic, the mental toll of COVID-19 has fallen disproportionately on
+        those already most marginalized.</strong> The health and economic impacts of COVID-19 have been <a
+        href="https://www.cccnewyork.org/blog/economic-hardship-from-covid-19-facing-nycs-working-parents-and-youth/">felt
+        most strongly</a> in working-class immigrant neighborhoods, and among Black and brown communities that have
+      faced <a
+        href="https://www.cccnewyork.org/blog/economic-hardship-from-covid-19-facing-nycs-working-parents-and-youth/"
+        target="_blank">historic and institutional inequities</a>. Extensive <a
+        href="https://www.nber.org/papers/w22459.pdf" target="_blank">research</a> indicates that household economic
+      hardships can contribute to decreased mental wellbeing and increased rates of certain mental disorders and
+      suicidal behaviors. With the added strains of job loss, loss of loved ones, housing instability, food insecurity,
+      and a host of other instabilities, more and more children have been placed at risk of poor mental health.
+    </p>
+
+    <p>
+      Compounding the impact of COVID-19 are the harms of institutional anti-Blackness and police violence that children
+      are coping with in the wake of the killing of George Floyd and the police’s violent reaction to protests. Even
+      prior to this crisis, <a
+        href="https://people.com/human-interest/voices-against-racism-black-youth-suicide-dr-michael-lindsey/"
+        target="_blank">we were beginning</a> to see a rise in suicide among Black youth. The factors driving this spike
+      – including job loss and economic insecurity, lack of access to mental health resources, and the toxic stress of
+      racism – <a href="https://www.nytimes.com/2020/06/29/parenting/coronavirus-black-children-inequality.html"
+        target="_blank">have all been heightened during this crisis</a>. NYC Well saw a nearly <a
+        href="https://www.thecity.nyc/2020/7/16/21327408/black-mental-health-specialists-weathering-waves-of-trauma"
+        target="_blank">10% surge in calls during the week following George Floyd’s death</a>, on top of increase in
+      calls from pandemic. The systemic racism and anti-Blackness students experience in their communities, schools, and
+      daily lives is a second pandemic that must be addressed.
+    </p>
+
+    <p>
+      Both Governor Cuomo and Mayor de Blasio have repeatedly recognized the importance of emotional and mental health
+      supports for children in the face of the pandemic. On September 10th, Governor Cuomo <a
+        href="https://www.governor.ny.gov/news/governor-cuomo-announces-digital-campaign-raise-awareness-suicide-prevention-day-new-york"
+        target="_blank">announced </a>a digital campaign to raise awareness on Suicide Prevention Day in New York. On
+      August 31st, Mayor de Blasio, First Lady McCrae, and Chancellor Carranza <a
+        href="https://www1.nyc.gov/office-of-the-mayor/news/615-20/mayor-de-blasio-first-lady-mccray-chancellor-carranza-bridge-school-"
+        target="_blank">released a Bridge to School plan </a>with mental health curriculum and resources for students,
+      educators, and parents. In conjunction with the plan, the Fund for Public Schools secured $1.9 million in
+      philanthropic funding to help equip school staff with trauma-informed training and resources. The Bridge to School
+      Plan includes important resources, and a framework of trauma-informed care for schools to follow.
+    </p>
+
+    <p>
+      However, with over one million students in NYC public schools and an additional 1.6 million statewide, New York
+      schools will require more detailed guidance and much greater investments to truly meet the growing needs of
+      students. New York schools will be unable to maintain their services – much less expand to meet the growing need –
+      if we continue to see devastating cuts at the city, state, and federal level. New York must recognize the
+      importance of investing and supporting school-based behavioral health supports as a critical means of recovery.
+    </p>
+
+    <h2>Funding and Cuts</h2>
+
+    <p>
+      School-based services to support students’ mental health and well-being are offered through a variety of programs
+      and initiatives, with funding streams that come from the federal, state, and city governments. Unfortunately, the
+      economic devastation from COVID-19 has impacted all three sources of funds. Despite students’ heightened need for
+      services, school-based mental health programs are facing the cumulative effects of funding cuts from every
+      direction.
+    </p>
+
+    <p>
+      <strong>Taken altogether, these cuts amount to significant reductions, scaling back, and eliminations of various
+        behavioral health services in schools. While the Governor and Mayor may be publicly stating the importance of
+        student mental health, their enacted budgets and ongoing actions reflect a different reality.</strong>
+    </p>
+
+    <h3>
+      Federal DSRIP Funding and Other Federal Funding Threats
+    </h3>
+
+    <p>
+      In 2014, New York State secured an agreement with the federal government known as Delivery System Reform
+      Improvement Payment (DSRIP), which provided $8 billion in federal funding for the state to initiate a series of
+      initiatives intended to promote health system reform and reduce avoidable hospitalization. One project was the <a href="https://jewishboard.org/about-us/programs-services/community-services/100-schools-project/"
+        target="_blank">100 Schools Project </a>which focused on providing school staff with skills and onsite support
+      to respond to students’ behavioral health needs, as well as direct services to students in the form of mental
+      health awareness presentations and supportive skills-building groups. Evaluations of the project found that it
+      significantly decreased classroom removals, suspensions, and arrests; decreased teacher turnover rates; decreased
+      reports of discrimination, harassment, and bullying; and reduced 911 calls.
+    </p>
+
+    <p>
+      Funding for the State’s DSRIP projects ended in 2019, including for the 100 Schools Project. Though this decision
+      occurred prior to the COVID-19 pandemic, it meant that New York schools entered the peak of COVID-19 with one less
+      behavioral resource in an already under-served landscape.
+    </p>
+
+    <p>
+      <strong>On top of this specific cut, New York is facing the much greater threat of inadequate federal support to
+        combat the myriad effects of COVID-19. </strong>Though the first four COVID relief packages were critical for
+      helping New Yorkers weather the coronavirus storm, much of this funding has already expired and has only addressed
+      a fraction of the need. With Congress still gridlocked, it remains uncertain whether the federal government will
+      provide the support that New York families so desperately need in the face of the ongoing pandemic threat. Without
+      adequate federal support, New York is likely to see significant cuts at the city and state level that impact
+      children’s fundamental access to care.
+    </p>
+
+    <h3>
+      State Education Aid
+    </h3>
+
+    <p>
+      Although the state was granted $716 million dollars in federal education aid in earlier COVID relief packages, <a
+        href="https://ny.chalkbeat.org/2020/5/4/21247282/who-got-hit-hardest-by-new-yorks-budget-crisis-its-highest-poverty-school-districts"
+        target="_blank">the money was used to replace a cut in the state budget</a> enacted in early April, leaving
+      education funding levels flat from last year. However, the state budget included a unique provision that allowed
+      the Governor to revisit the budget multiple times throughout the year and enact new cuts to education.
+    </p>
+
+    <p>
+      As a result, in August it <a
+        href="https://www.democratandchronicle.com/story/news/education/2020/08/18/rcsd-says-slash-budget-20-new-york-holds-back-aid/3395767001/"
+        target="_blank">was announced</a> that 20% of state education aid would be withheld from localities, including
+      New York City. The Governor then later <a
+        href="https://www.wsj.com/articles/new-york-state-to-fund-school-districts-in-full-after-withholding-money-11600348927"
+        target="_blank">agreed to release the funds</a>, but short of federal intervention or increased state revenue,
+      the cut could happen again and at almost any time. A 20% across-the-board cut could have disastrous effects on New
+      York City schools, <a
+        href="https://ny.chalkbeat.org/2020/8/20/21376838/carranza-says-state-budget-cuts-threaten-9000-teacher-jobs-and-in-person-learning"
+        target="_blank">including 9,000 teacher layoffs</a> and the end of any in-person instruction. <a href="https://www.aqeny.org/2020/09/02/set-up-to-fail-how-cuomos-school-cuts-target-new-yorks-black-brown-students/" target="_blank">A report by AQE</a> found that a 20% withholding would disproportionately harm high needs districts, leading to $4 billion in cuts to the 205 schools that educate 75% of the economically disadvantaged students in the state and 63% of Black and Hispanic students.   Compounding these
+      threats is an additional 20% withholding of state health aid announced in September. This state decision will
+      withhold roughly $17 million that counties use to fund flexible local programs and health services. A withholding
+      to education funds on top of this withholding would have a devastating impact on counselors, social workers and
+      other programs.
+    </p>
+
+    <p>
+      Amid this uncertain budget context from the state, the New York City Department of Education (DOE) has been forced to be
+      extremely cautious with its own budget, knowing state funds could be cut at any time. It was in this context the
+      City developed an austere budget for schools and continue to operate under the threat of more cuts.
+    </p>
+
+    <h3>
+      City Cuts to School Budgets, Contracts and Community Schools
+    </h3>
+
+    <p>
+      In the Mayor’s Executive Budget released in April, the city proposed over $1.2 billion in cuts to the Department
+      of Education (DOE) over the next four years. Fortunately, some of these cuts were restored during budget
+      negotiations, including a $100 million restoration to the Fair Student Funding formula, the main vehicle by which
+      schools are funded. However, over $454 million in cuts to the education budget over the next four years remained
+      at adoption, many of which could impact mental health services in schools.
+    </p>
+
+    <p>
+      Proposed in April was a $40 million reduction to School Allocation Memos, funds tied to a variety of specific
+      initiatives that get distributed to schools. Although the reduction was finalized with the Adopted Budget in June,
+      the DOE still has not identified the specific areas this reduction might impact, leaving schools wary to spend
+      funds they are uncertain will be delivered.
+    </p>
+
+    <p>
+      This combined with the uncertainty of looming state cuts has caused general belt-tightening within the DOE. Among
+      the victims of these budget constraints <a
+        href="https://ny.chalkbeat.org/2020/8/14/21368574/coronavirus-mental-health-counselors" target="blank">have been
+        CBOs who provide contracted counseling services in schools</a>. Other <a
+        href="https://affinity.strongschools.nyc/home" target="_blank">groups that contract with the DOE</a>, such as
+      The Urban Assembly or NYC Outward Bound, who manage and support networks of schools within the DOE, are also
+      facing the threat of a reduction or total elimination of their contracts. Without those contracts schools within
+      those networks would lose behavioral health supports such as <a
+        href="https://urbanassembly.org/strategy/social-emotional-learning" target="_blank">social-emotional
+        training</a> for educators and guidance for the <a
+        href="https://www.nycoutwardbound.org/select-strategies/crew/" target="_blank">creation of strong advisory
+        programs</a>. Community-based behavioral health providers <a
+        href="www.centernyc.org/news-center/2020/9/15/despite-covid-19s-emotional-traumas-student-mental-health-services-dry-up"
+        target="_blank">have begun hearing </a>from principals who fear that they can no longer afford keep their
+      behavioral health programs running in the next year.
+    </p>
+
+    <p>
+      The DOE also saw its budget cut for <a
+        href="https://ny.chalkbeat.org/2020/7/22/21334981/education-budget-cuts-hiring-freeze" target="_blank">Borough
+        Field Support Offices by $20 million</a>. These support offices often have mental health experts such as
+      behavioral specialists and social workers on staff to support teachers and provide push-in supports in schools.
+      The borough offices could also help in the rollout of the city’s Bridge to School plan, but the cuts may hinder
+      implementation efforts.
+    </p>
+
+    <p>
+      Lastly, a $6 million reduction in community school contracts combined with the loss of a $3 million state grant
+      usually covered by the city, could mean the loss of large funding sources for individual schools. NYC community
+      schools offer wrap-around supports for students and families, including upstream prevention services like food
+      pantries and benefit enrollment help, in addition to direct mental health services in the form of counselors,
+      social workers and school-based mental health clinics. These supports have <a
+        href="https://www.rand.org/pubs/research_reports/RR3245.html" target="_blank">been shown to have positive
+        effects</a> on outcomes like attendance, grade progression, math achievement and reductions in disciplinary
+      incidents.
+    </p>
+
+    <p>
+      As of publication of this piece, the DOE still has not specified exactly how these cuts will be implemented, but schools funded by
+      the former state portion of the grant will almost certainly lose some funds for services, and advocates estimate
+      the total cuts <a
+        href="https://www.nbcnewyork.com/news/local/nyc-school-programs-lose-millions-in-funding-just-weeks-before-school-year-starts/2572290/"
+        target="_blank">could impact up to 34 community schools and over 30,000 students.</a>
+    </p>
+    <h2>School Spotlights</h2>
+    <p>To better understand how these various funding cuts could impact behavioral services at the school level, three
+      schools are highlighted below. Each of these schools has benefited from important behavioral health supports that are at risk from current or future cuts. Click to see data on the school, the surrounding area, and the services these
+      schools offer that are at risk.</p>
+
+    <div class="graph-wrapper">
+      <div id="app"></div>
+    </div>
+
+    <h2>
+      Policy Recommendations
+    </h2>
+
+    <h3>Federal</h3>
+    <p>
+      We cannot ensure the wellbeing of children if our federal governments take a short-sighted approach to their
+      mental health. Federal investments are needed in children’s behavioral health services. Investments are also
+      needed in the foundations of recovery and promotion of wellbeing – housing, nutrition, financial assistance,
+      unemployment insurance – that support family and household stability and protect children from the stressors that
+      can drive poor mental health.
+    </p>
+
+    <p>
+      <strong>As a start, <a href="https://www.cccnewyork.org/actions/tell-the-u-s-senate-to-pass-legislation-to-help-struggling-families/">Congress must pass</a> comprehensive stimulus legislation to help struggling families. Without
+        this assistance, families in New York and across the country face long term hardship and resulting trauma.
+      </strong>
+    </p>
+
+    <h3>
+      State
+    </h3>
+
+    <p>
+      At the state level, New York must protect and invest in the children’s behavioral health infrastructure. Only by
+      investing in children now can we avoid the long-term repercussions of trauma and unmet mental health needs. Those
+      families most impacted by the economic downturn, illness, and loss are those most in need of behavioral health
+      supports for their children. We strongly support the State’s efforts to draw down additional federal funding. We
+      also recognize that by protecting and strengthening state investments, we can reduce hospitalizations and
+      emergency room visits, and prevent the emergence of more complex needs among children that are harder to address
+      later in life.
+    </p>
+
+    <p>
+      Given the long-term impact of cuts to healthcare, education, and social services, it is more important than ever
+      for the state to pursue revenue and tax policy options to raise the resources needed to support essential
+      investments and avoid devastating service reductions. New York State must also grant borrowing authority to New
+      York City. After 9/11, the Legislature unanimously passed, and the Governor granted borrowing authority to the city
+      in recognition of the economic hardship the city was facing. We believe borrowing authority must be granted once
+      again given the scope of the financial crisis the city is facing, and the impact service reductions would have on
+      communities that are already suffering and facing heightened needs.
+    </p>
+    <p>
+      Additionally, we join partners throughout the state in urging leaders to move away from punitive approaches like
+      suspensions that cause harm by pushing students out of school and into the school-to-prison pipeline. Many
+      students returning to school will have experienced trauma and are entering an uncertain academic environment with
+      new rules and anxieties. New York educators must be careful not to respond to student behavior with suspensions,
+      which disproportionately impact students with disabilities, LGBTQ students, students from low-income households,
+      and students of color. <strong>We therefore join many state partners in calling on <a
+          href="https://www.solutionsnotsuspensionsny.org/covid-response" target="_blank">New York to issue a
+          moratorium</a> on suspensions for the 2020-2021 school year to ensure children are not losing out on even more
+        learning, and have the support they need to heal. </strong>
+    </p>
+
+    <h3>
+      City
+    </h3>
+
+    <p>
+      The New York Schools Reopening Plan and Bridge to School Plans have recognized the importance of social,
+      emotional, and behavioral health of students. However, it is challenging to understand how schools will be able to
+      implement these interventions without adequate resources, particularly at a time when so many existing funding
+      sources have been slashed due to budget cuts at the city, state, and federal level.
+    </p>
+
+    <p>
+      To strengthen behavioral supports for students, <strong>NYC must reverse cuts to community schools and funding
+        contracts that provide mental health services. New York cannot build new supports with one hand while
+        dismantling existing supports with the other. </strong>
+    </p>
+
+    <p>
+      <a href="https://www.advocatesforchildren.org/sites/default/files/on_page/NP_mh_supports_reopening_letter_082620.pdf?pt=1"
+        target="_blank">Advocates have called</a> for resources to help implement and expand on the promising practices
+      identified in the Bridges to School plan. School staff need additional tools, training, and guidance to ensure
+      that every school is able to offer the types of interventions that are so critical for recovery. These include
+      trauma-informed, culturally responsive services that are healing-centered and grounded in restorative practices.
+      One place to look for guidance is the work of the Bronx Healing-Centered Schools Working Group, which has provided
+      a <a
+        href="https://www.legalservicesnyc.org/what-we-do/practice-areas-and-projects/access-to-education/community-roadmap-to-healing-centered-schools"
+        target="_blank">Roadmap</a> for how schools can remove structures that undermine healing and create whole-school
+      changes that support healing. These approaches will be particularly important for addressing manifestations of
+      trauma caused by COVID-19. Additionally, whole-school approaches must be accompanied by adequate clinical care for
+      those students who have a higher level of need.
+    </p>
+
+    <p>
+      Moreover, schools must go further in protecting students against the threat of punitive disciplinary responses
+      which are likely to be heightened in the face of COVID. Schools and staff must be given the training and resources they need to respond with
+      developmentally appropriate interventions, such as healing circles and restorative practices. Like schools
+      statewide, NYC schools must also be required to put a moratorium on suspensions in recognition of the trauma of
+      COVID-19 and racist violence that so many students have encountered.
+    </p>
+    <h2>Conclusion</h2>
+    <p>
+      As result of the COVID-19 pandemic and the economic crisis that has followed, we are witnessing the cumulative
+      harm that federal inaction, and state and city budget cuts are having on New York’s children. Budget reductions to
+      education, health, and other local funding have a compounding effect, impacting the same communities over and over
+      again. Those communities most impacted are disproportionately low-income communities of color, and they are the
+      very same communities who have experienced higher rates of COVID-19 infections, job and income loss, housing
+      instability, and the harms of policing – all of which are driven by systemic and institutional racism.
+    </p>
+    <p>
+      Despite the great uncertainty around what the return to school will look like, schools can and should play a
+      critical role in providing students with community support, identifying their behavioral health needs, and
+      ensuring students are connected to clinical services. This is a time to strengthen the supports available to
+      students so that they can recover, learn, and thrive in the face of the current challenges.
+    </p>
+
+
+
+
+  </main>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

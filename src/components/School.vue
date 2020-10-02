@@ -25,6 +25,7 @@
       />
       <HorizontalBars :activeData="suspensions" :graphId="'suspensions'" />
     </div>
+    <div class="info" v-html="activeSchool[0].info[1]"></div>
   </div>
 </template>
 

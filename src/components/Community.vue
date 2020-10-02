@@ -11,7 +11,7 @@
         {{ activeSchool[0].schoolDistrict }} in {{ activeSchool[0].borough }}.
       </p>
     </div>
-    <p v-html="activeSchool[0].info"></p>
+    <div class="info" v-html="activeSchool[0].info[0]"></div>
     <h2>
       <span style="color:#0099cd">{{ activeSchool[0].communityDistrict }}</span>
       compared to {{ activeSchool[0].borough }} and NYC
@@ -34,7 +34,7 @@
         :activeData="overcrowded"
         :graphId="'over-crowded-housing'"
       />
-      <HorizontalBars :activeData="childrenInShelter" :graphId="'shelter'" />
+      <HorizontalBarsRate :activeData="childrenInShelter" :graphId="'shelter'" />
       <HorizontalBars
         :activeData="disconnect"
         :graphId="'disconnected-youth'"
@@ -49,12 +49,14 @@ import CommunityMapBrooklyn from "@/components/CommunityMapBrooklyn.vue";
 import CommunityMapBronx from "@/components/CommunityMapBronx.vue";
 import CommunityMapManhattan from "@/components/CommunityMapManhattan.vue";
 import HorizontalBars from "@/components/HorizontalBars.vue";
+import HorizontalBarsRate from '@/components/HorizontalBarsRate.vue';
 export default {
   components: {
     CommunityMapBrooklyn,
     CommunityMapBronx,
     CommunityMapManhattan,
-    HorizontalBars
+    HorizontalBars,
+    HorizontalBarsRate
   },
   props: {
     activeSchool: Array

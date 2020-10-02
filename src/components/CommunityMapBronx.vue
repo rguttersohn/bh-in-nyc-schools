@@ -13,7 +13,7 @@
         id="g-Bronx-School-Map-500px-Artboard_2-img"
         class="g-aiImg"
         alt=""
-        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Bronx-School-Map-500px-Artboard_2.png"
+        src="https://www.cccnewyork.org/wp-content/uploads/2020/09/Bronx-School-Map-500px-Artboard_2-1.png"
       />
       <div
         id="g-ai0-1"
@@ -104,7 +104,7 @@
         class="g-Other_3 g-aiAbs g-aiPointText"
         style="top:81.9197%;margin-top:-7.6px;left:75.0839%;width:57px;"
       >
-        <p class="g-pstyle1">(BX03)</p>
+        <p class="g-pstyle1">(B03)</p>
       </div>
       <div
         id="g-ai0-14"
@@ -216,7 +216,7 @@ export default {
 #g-Bronx-School-Map-500px-Artboard_2 .g-pstyle0 {
   line-height: 10px;
   height: 10px;
-  font-size: 8px;
+  font-size: 11px;
   text-align: center;
 }
 #g-Bronx-School-Map-500px-Artboard_2 .g-pstyle1 {
